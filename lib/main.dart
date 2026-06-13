@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:steam_and_robotics_hub/onboarding_page.dart';
 import 'package:steam_and_robotics_hub/splash_screen.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: OnboardingPages(),
     );
   }
 }

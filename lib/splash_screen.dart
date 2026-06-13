@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:steam_and_robotics_hub/onboarding_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,20 +14,21 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          // Background
           SizedBox.expand(
             child: Image.network(
               "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA3L2pvYjE4NzItYmFja2dyb3VuZC1jaGEtMDExaF8xLmpwZw.jpg",
               fit: BoxFit.cover,
             ),
           ),
-
-          // Dark overlay for better contrast
-          Container(
-            color: Colors.black.withOpacity(0.6),
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => OnboardingPages()));
+            },
+            child: Container(
+              color: Colors.black12,
+            ),
           ),
-
-          // Content
           SafeArea(
             child: Center(
               child: Padding(
@@ -44,7 +46,18 @@ class _SplashScreenState extends State<SplashScreen> {
                         color: Colors.white,
                         fontSize: 30,
                         fontWeight: FontWeight.w700,
-                        letterSpacing: 1.5,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 10.0,
+                            color: Colors.blue,
+                            offset: Offset(0, 0),
+                          ),
+                          Shadow(
+                            blurRadius: 20.0,
+                            color: Colors.blueAccent,
+                            offset: Offset(0, 0),
+                          ),
+                        ],
                       ),
                     ),
                     Text(
@@ -53,10 +66,16 @@ class _SplashScreenState extends State<SplashScreen> {
                         color: Colors.lightBlueAccent,
                         fontSize: 42,
                         fontWeight: FontWeight.bold,
-                        letterSpacing: 2,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 10.0,
+                            color: Colors.blue,
+                            offset: Offset(0, 0),
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(height: 40),
+                    SizedBox(height: 40),
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
