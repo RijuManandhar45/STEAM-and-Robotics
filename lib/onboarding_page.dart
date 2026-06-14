@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:steam_and_robotics_hub/home_page.dart';
 import 'package:steam_and_robotics_hub/splash_screen.dart';
 
 class OnboardingPages extends StatefulWidget {
@@ -83,7 +84,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                       ),
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => SplashScreen()));
+                            MaterialPageRoute(builder: (_) => HomePage()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
