@@ -121,13 +121,22 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "Smart",
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
+                          Row(
+                            children: [
+                              Text(
+                                "Smart",
+                                style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Spacer(),
+                              Icon(
+                                Icons.double_arrow,
+                                color: Colors.white,
+                              )
+                            ],
                           ),
                           Text(
                             "Irrigation System",
@@ -165,11 +174,135 @@ class _HomePageState extends State<HomePage> {
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500),
                             )),
-                          )
+                          ),
                         ],
                       ),
                     )
                   ],
+                ),
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Categories",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
+                  ),
+                  Spacer(),
+                  Text(
+                    "See All",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.blue),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              SizedBox(
+                height: 100,
+                child: ListView.builder(
+                  itemCount: list.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    final categories = list[index];
+                    return Padding(
+                      padding: EdgeInsets.only(right: 24),
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Image.network(categories.image ?? ""),
+                          ),
+                          SizedBox(height: 12),
+                          Text(
+                            categories.name ?? "",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Recent Projects",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
+                  ),
+                  Spacer(),
+                  Text(
+                    "See All",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.blue),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              SizedBox(
+                height: 150,
+                child: ListView.builder(
+                  itemCount: projectList.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    final projects = projectList[index];
+                    return Padding(
+                      padding: EdgeInsets.only(right: 24),
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Container(
+                              height: 100,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Image.network(
+                                projects.image ?? "",
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          Text(
+                            projects.name ?? "",
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
               )
             ],
@@ -179,3 +312,59 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+class Categotries {
+  String? name;
+  String? image;
+
+  Categotries({this.name, this.image});
+}
+
+List<Categotries> list = [
+  Categotries(
+      name: "Robotics",
+      image: "https://cdn-icons-png.flaticon.com/512/6134/6134346.png"),
+  Categotries(
+      name: "Programming",
+      image: "https://cdn-icons-png.flaticon.com/512/2621/2621040.png"),
+  Categotries(
+      name: "Electronics",
+      image:
+          "https://icons.veryicon.com/png/o/education-technology/blue-gray-solid-blend-icon/electronics-187.png"),
+  Categotries(
+      name: "Science",
+      image: "https://cdn-icons-png.flaticon.com/512/5205/5205074.png"),
+  Categotries(
+      name: "IoT",
+      image: "https://cdn-icons-png.flaticon.com/512/10355/10355707.png")
+];
+
+class Projects {
+  String? name;
+  String? image;
+
+  Projects({this.name, this.image});
+}
+
+List<Projects> projectList = [
+  Projects(
+      name: "Line Following Robot",
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsBnuO-waPYkjfpxYoymSGhMqHeL7pQ6vgi9_N3QWSRO6m4ZkM5gr88bIS&s=10"),
+  Projects(
+      name: "Smart Dustbin",
+      image:
+          "https://projects.arduinocontent.cc/cover-images/0873f836-7d84-475e-965f-aed694af837f.blob"),
+  Projects(
+      name: "Weather Monitoring systems",
+      image:
+          "https://cdn.pixabay.com/photo/2019/02/05/20/00/anemometer-3977718_1280.jpg"),
+  Projects(
+      name: "RC Car",
+      image:
+          "https://thumbs.dreamstime.com/b/custom-handmade-rc-car-model-diy-electronic-project-remote-control-car-kit-unique-assembly-creative-construction-personalized-334590893.jpg"),
+  Projects(
+      name: "Smart Security System",
+      image:
+          "https://www.gensecurity.com/hs-fs/hubfs/Blog/GenSec_February%202025_Smart%20Home%20Security_Blog_2.jpeg?width=2500&height=1458&name=GenSec_February%202025_Smart%20Home%20Security_Blog_2.jpeg")
+];
