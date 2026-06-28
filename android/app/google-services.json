@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "212433154929",
+    "project_id": "steam-and-robotics-hub",
+    "storage_bucket": "steam-and-robotics-hub.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212433154929:android:0151241739c0d4a960fcd0",
+        "android_client_info": {
+          "package_name": "com.example.steam_and_robotics_hub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChetvLUACZGXBPrHGYYKcBc2kzE1u_x0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

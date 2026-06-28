@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:steam_and_robotics_hub/projects.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,6 +12,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home),
+      //       label: "Home",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.work),
+      //       label: "Projects",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.person),
+      //       label: "Profile",
+      //     ),
+      //   ],
+      // ),
       backgroundColor: const Color.fromARGB(255, 6, 54, 101),
       body: SingleChildScrollView(
           child: Padding(
@@ -250,12 +267,18 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white),
                   ),
                   Spacer(),
-                  Text(
-                    "See All",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.blue),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => Projects()));
+                    },
+                    child: Text(
+                      "See All",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.blue),
+                    ),
                   ),
                 ],
               ),
@@ -304,7 +327,7 @@ class _HomePageState extends State<HomePage> {
                     );
                   },
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -339,32 +362,36 @@ List<Categotries> list = [
       image: "https://cdn-icons-png.flaticon.com/512/10355/10355707.png")
 ];
 
-class Projects {
+class ProjectsCategories {
   String? name;
   String? image;
 
-  Projects({this.name, this.image});
+  ProjectsCategories({this.name, this.image});
 }
 
-List<Projects> projectList = [
-  Projects(
+List<ProjectsCategories> projectList = [
+  ProjectsCategories(
       name: "Line Following Robot",
       image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsBnuO-waPYkjfpxYoymSGhMqHeL7pQ6vgi9_N3QWSRO6m4ZkM5gr88bIS&s=10"),
-  Projects(
+  ProjectsCategories(
       name: "Smart Dustbin",
       image:
           "https://projects.arduinocontent.cc/cover-images/0873f836-7d84-475e-965f-aed694af837f.blob"),
-  Projects(
+  ProjectsCategories(
       name: "Weather Monitoring systems",
       image:
           "https://cdn.pixabay.com/photo/2019/02/05/20/00/anemometer-3977718_1280.jpg"),
-  Projects(
+  ProjectsCategories(
       name: "RC Car",
       image:
           "https://thumbs.dreamstime.com/b/custom-handmade-rc-car-model-diy-electronic-project-remote-control-car-kit-unique-assembly-creative-construction-personalized-334590893.jpg"),
-  Projects(
+  ProjectsCategories(
       name: "Smart Security System",
       image:
-          "https://www.gensecurity.com/hs-fs/hubfs/Blog/GenSec_February%202025_Smart%20Home%20Security_Blog_2.jpeg?width=2500&height=1458&name=GenSec_February%202025_Smart%20Home%20Security_Blog_2.jpeg")
+          "https://www.gensecurity.com/hs-fs/hubfs/Blog/GenSec_February%202025_Smart%20Home%20Security_Blog_2.jpeg?width=2500&height=1458&name=GenSec_February%202025_Smart%20Home%20Security_Blog_2.jpeg"),
+  ProjectsCategories(
+      name: "Autonomous Rescue Robot",
+      image:
+          "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/streams/2013/June/130621/6C7972703-http3A2F2Fwww.newsvine.com2F_vine2Fimages2Fusers2Fjohn-roach2F5516801.jpg"),
 ];

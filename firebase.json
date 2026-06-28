@@ -1,0 +1,21 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "steam-and-robotics-hub",
+                    "appId": "1:212433154929:android:0151241739c0d4a960fcd0",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "steam-and-robotics-hub",
+                    "configurations": {
+                        "android": "1:212433154929:android:0151241739c0d4a960fcd0"
+                    }
+                }
+            }
+        }
+    }
+}
